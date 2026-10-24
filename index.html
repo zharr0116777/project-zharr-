@@ -217,73 +217,6 @@ body:before{
   .joki-sea-warning-text{font-size:11px;line-height:1.7}
 }
 
-/* PROMO CODE / VOUCHER STYLE */
-/* BUBBLE PROMO — visible in standard product confirmation only */
-.promo-code-box{display:block!important;visibility:visible!important;opacity:1!important;position:relative;z-index:2;min-height:150px;width:100%;box-sizing:border-box}
-.promo-code-box[hidden]{display:none!important}
-.promo-code-title{display:block!important;color:#fff!important;font-weight:800}
-.promo-code-subtitle,.promo-code-status{display:block!important;visibility:visible!important}
-.promo-code-row{display:flex!important;visibility:visible!important;gap:10px;align-items:stretch}
-.promo-code-input{display:block!important;visibility:visible!important;min-width:0;flex:1}
-.promo-code-apply{display:block!important;visibility:visible!important}
-
-/* BUBBLE PROMO — visual polish only */
-.promo-code-box{
-  position:relative;
-  overflow:hidden;
-  border-color:rgba(207,48,73,.30);
-  background:linear-gradient(145deg,rgba(112,15,34,.18),rgba(255,255,255,.025) 58%,rgba(0,0,0,.22));
-}
-.promo-code-box:before{
-  content:"";position:absolute;inset:0 auto 0 0;width:3px;
-  background:linear-gradient(180deg,#e34c66,#75172a);opacity:.9;
-}
-.promo-code-title{letter-spacing:1.7px}
-.promo-code-box{
-  margin:22px 0;
-  padding:24px 22px 20px;
-  border:1px solid rgba(255,255,255,.11);
-  border-radius:22px;
-  background:rgba(255,255,255,.035);
-  text-align:left;
-  box-shadow:inset 0 1px rgba(255,255,255,.05),0 12px 30px rgba(0,0,0,.18);
-}
-.promo-code-title{color:rgba(255,255,255,.90);font-size:14px;font-weight:800;letter-spacing:2px;margin-bottom:9px}
-.promo-code-subtitle{color:rgba(255,255,255,.48);font-size:11px;line-height:1.7;margin-bottom:14px}
-.promo-code-row{display:flex;align-items:stretch;gap:12px;width:100%}
-.promo-code-input{
-  flex:1 1 auto; width:auto; min-width:0; height:64px; padding:0 22px;
-  border:1px solid rgba(195,55,75,.30); border-radius:18px; outline:none;
-  background:rgba(0,0,0,.30); color:#fff; font:inherit; font-size:16px;
-  font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  box-shadow:inset 0 1px rgba(255,255,255,.04)
-}
-.promo-code-input::placeholder{color:rgba(255,255,255,.30);font-weight:600}
-.promo-code-input:focus{border-color:rgba(195,55,75,.68);box-shadow:0 0 0 4px rgba(195,55,75,.10),0 0 22px rgba(195,55,75,.08)}
-.promo-code-apply{
-  flex:0 0 28%; min-width:150px; height:64px; padding:0 22px;
-  border:1px solid rgba(255,255,255,.08); border-radius:18px;
-  background:rgba(255,255,255,.10); color:rgba(255,255,255,.76);
-  font:inherit; font-size:15px; font-weight:800; letter-spacing:.2px;
-  cursor:pointer; transition:.25s ease
-}
-.promo-code-apply:hover:not(:disabled){background:rgba(195,55,75,.18);border-color:rgba(195,55,75,.38);color:#fff}
-.promo-code-apply:active:not(:disabled){transform:scale(.985)}
-.promo-code-apply:disabled{opacity:.48;cursor:not-allowed}
-.promo-code-status{min-height:18px;margin-top:10px;font-size:10px;line-height:1.5;color:rgba(255,255,255,.42)}
-.promo-code-status.success{color:#67d58a}
-.promo-code-status.error{color:#d45a6c}
-.confirm-discount-row{display:none;font-size:11px}
-.confirm-discount-row.show{display:flex}
-@media(max-width:500px){
-  .promo-code-box{padding:21px 18px 19px;border-radius:20px}
-  .promo-code-title{font-size:13px}
-  .promo-code-subtitle{font-size:10px}
-  .promo-code-row{flex-direction:row;gap:8px}
-  .promo-code-input{height:62px;padding:0 15px;font-size:13px;border-radius:16px}
-  .promo-code-apply{flex:0 0 27%;min-width:92px;height:62px;padding:0 8px;font-size:12px;border-radius:16px}
-}
-
 /* HAMBURGER / BRANCH MENU */
 
 
@@ -2783,18 +2716,7 @@ confirm:`
       <div class="confirm-row"><span>Hari / Tanggal</span><span id="confirmDate">-</span></div>
       <div class="confirm-row"><span>Kuantitas</span><span id="confirmQty">-</span></div>
       <div class="confirm-row"><span>Harga / item</span><span id="confirmUnitPrice">-</span></div>
-      <div class="confirm-row confirm-discount-row" id="confirmDiscountRow"><span>Diskon promo</span><span id="confirmDiscount">-</span></div>
       <div class="confirm-row"><span>Total</span><span id="confirmTotal">-</span></div>
-    </div>
-
-    <div class="promo-code-box" id="projectZharrPromoBubble" style="display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;width:100%!important;min-height:150px!important;box-sizing:border-box!important;margin:22px 0!important;padding:24px 22px 20px!important;border:1px solid rgba(207,48,73,.42)!important;border-radius:22px!important;background:linear-gradient(145deg,rgba(112,15,34,.22),rgba(255,255,255,.035) 58%,rgba(0,0,0,.22))!important;">
-      <div class="promo-code-title">✦ BUBBLE PROMO</div>
-      
-      <div class="promo-code-row">
-        <input type="text" id="promoCodeInput" class="promo-code-input" maxlength="30" autocomplete="off" spellcheck="false" placeholder="MASUKKAN KODE PROMO (JIKA ADA)">
-        <button type="button" id="promoCodeApply" class="promo-code-apply" disabled>GUNAKAN</button>
-      </div>
-      <div id="promoCodeStatus" class="promo-code-status" style="display:none"></div>
     </div>
 
     <div class="confirm-rules">
@@ -3236,18 +3158,13 @@ function bindConfirmationPage(){
   const dateEl=document.getElementById("confirmDate");
   const qtyEl=document.getElementById("confirmQty");
   const unitPriceEl=document.getElementById("confirmUnitPrice");
-  const discountRow=document.getElementById("confirmDiscountRow");
-  const discountEl=document.getElementById("confirmDiscount");
   const totalEl=document.getElementById("confirmTotal");
   const rulesTitle=document.getElementById("confirmRulesTitle");
   const rulesList=document.getElementById("confirmRulesList");
   const agree=document.getElementById("confirmAgree");
   const confirmBtn=document.getElementById("confirmOrderButton");
-  const promoInput=document.getElementById("promoCodeInput");
-  const promoStatus=document.getElementById("promoCodeStatus");
-  const promoApply=document.getElementById("promoCodeApply");
 
-  if(!productEl || !dateEl || !qtyEl || !unitPriceEl || !discountRow || !discountEl || !totalEl || !rulesTitle || !rulesList || !agree || !confirmBtn || !promoInput || !promoStatus || !promoApply) return;
+  if(!productEl || !dateEl || !qtyEl || !unitPriceEl || !totalEl || !rulesTitle || !rulesList || !agree || !confirmBtn) return;
 
   const now=new Date();
   const hariTanggal=new Intl.DateTimeFormat("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"Asia/Jakarta"}).format(now);
@@ -3258,100 +3175,27 @@ function bindConfirmationPage(){
     qtyEl.textContent="-";
     unitPriceEl.textContent="-";
     totalEl.textContent="-";
-    discountRow.classList.remove("show");
     rulesTitle.textContent="PERATURAN ITEM";
     rulesList.innerHTML="<li>Belum ada item yang dipilih.</li>";
     return;
   }
 
-  const promoBox=document.querySelector(".promo-code-box");
-  // Normalize product names: the catalog and confirmation data may differ in spaces/capitalization.
-  const promoProductName=String(pendingOrder.product||"").toLowerCase().replace(/[^a-z0-9]/g,"");
-  const isJokiProduct=/joki|bloxfruit/.test(promoProductName);
-  const promoEligible=!isJokiProduct && (
-    promoProductName.includes("alightmotion") ||
-    promoProductName.includes("amprem") ||
-    promoProductName.includes("scriptbotwa") ||
-    promoProductName.includes("canvapremium")
-  );
-  if(promoBox){
-    promoBox.hidden=!promoEligible;
-    promoBox.style.setProperty("display", promoEligible ? "block" : "none", "important");
-    promoBox.style.setProperty("visibility", promoEligible ? "visible" : "hidden", "important");
-    promoBox.style.setProperty("opacity", promoEligible ? "1" : "0", "important");
-  }
-  if(!promoEligible){
-    pendingOrder.promoCode="";
-    pendingOrder.discountPerItem=0;
-    pendingOrder.discountTotal=0;
-  }
-
-  const baseUnitPrice=Number(pendingOrder.unitPrice)||0;
-  const promoCode="AZHARPROMO10.10";
-  const promoType="percent";
-  const promoValue=10;
-
-  function resetPromoDisplay(){
-    const finalUnitPrice=baseUnitPrice;
-    pendingOrder.promoCode="";
-    pendingOrder.discountPerItem=0;
-    pendingOrder.discountTotal=0;
-    pendingOrder.finalUnitPrice=finalUnitPrice;
-    pendingOrder.total=finalUnitPrice*pendingOrder.qty;
-    unitPriceEl.textContent=formatRupiah(finalUnitPrice);
-    totalEl.textContent=formatRupiah(pendingOrder.total);
-    discountRow.classList.remove("show");
-  }
-
-  function applyPromo(){
-    if(!promoEligible){
-      resetPromoDisplay();
-      promoStatus.textContent="Promo hanya berlaku untuk item 1–4, bukan joki.";
-      promoStatus.className="promo-code-status error";
-      return;
-    }
-    const code=promoInput.value.trim().toUpperCase();
-    promoInput.value=code;
-
-    if(!code){
-      resetPromoDisplay();
-      promoStatus.textContent="Masukkan kode promo lalu tekan Enter.";
-      promoStatus.className="promo-code-status";
-      return;
-    }
-
-    const active=code===promoCode;
-    const rawDiscount=promoType==="percent"
-      ? Math.floor(baseUnitPrice*Math.min(100,Math.max(0,promoValue))/100)
-      : Math.max(0,promoValue);
-    const discountPerItem=active ? Math.min(rawDiscount,baseUnitPrice) : 0;
-    const finalUnitPrice=baseUnitPrice-discountPerItem;
-    const discountTotal=discountPerItem*pendingOrder.qty;
-
-    pendingOrder.promoCode=active ? promoCode : "";
-    pendingOrder.discountPerItem=discountPerItem;
-    pendingOrder.discountTotal=discountTotal;
-    pendingOrder.finalUnitPrice=finalUnitPrice;
-    pendingOrder.total=finalUnitPrice*pendingOrder.qty;
-
-    unitPriceEl.textContent=formatRupiah(finalUnitPrice);
-    totalEl.textContent=formatRupiah(pendingOrder.total);
-
-    if(active){
-      discountRow.classList.add("show");
-      discountEl.textContent="-"+formatRupiah(discountTotal);
-      promoStatus.textContent="✓ Kode AZHARPROMO10.10 berhasil! Diskon 10% per item diterapkan.";
-      promoStatus.className="promo-code-status success";
-    }else{
-      resetPromoDisplay();
-      promoStatus.textContent="Kode promo tidak valid.";
-      promoStatus.className="promo-code-status error";
-    }
-  }
+  const unitPrice=Number(pendingOrder.unitPrice)||0;
+  const qty=Math.max(1,Number(pendingOrder.qty)||1);
+  const total=unitPrice*qty;
+  // Always use the regular price; promo discounts are no longer applied.
+  pendingOrder.promoCode="";
+  pendingOrder.discountPercent=0;
+  pendingOrder.discountPerItem=0;
+  pendingOrder.discountTotal=0;
+  pendingOrder.finalUnitPrice=unitPrice;
+  pendingOrder.total=total;
 
   productEl.textContent=pendingOrder.product;
   dateEl.textContent=hariTanggal;
-  qtyEl.textContent=pendingOrder.qty+" pcs";
+  qtyEl.textContent=qty+" pcs";
+  unitPriceEl.textContent=formatRupiah(unitPrice);
+  totalEl.textContent=formatRupiah(total);
 
   const rules=productRules[pendingOrder.ruleKey || pendingOrder.product] || [];
   rulesTitle.textContent="PERATURAN "+pendingOrder.product.toUpperCase();
@@ -3359,43 +3203,10 @@ function bindConfirmationPage(){
     ? rules.map(rule=>`<li>${rule}</li>`).join("")
     : "<li>Peraturan untuk item ini belum tersedia.</li>";
 
-  promoInput.value=promoEligible ? (pendingOrder.promoCode || "") : "";
-  promoInput.disabled=!promoEligible;
-  promoApply.disabled=!promoEligible || !promoInput.value.trim();
-  resetPromoDisplay();
-  // Keep the promo bubble clean: no instructional text that reveals the private code.
-  promoStatus.textContent="";
-  promoStatus.className="promo-code-status";
-  promoStatus.style.display="none";
-
   agree.checked=false;
   confirmBtn.disabled=true;
-
   agree.addEventListener("change",()=>{
     confirmBtn.disabled=!agree.checked;
-  });
-
-  promoInput.addEventListener("input",()=>{
-    if(!promoEligible) return;
-    promoInput.value=promoInput.value.toUpperCase();
-    promoApply.disabled=!promoInput.value.trim();
-    resetPromoDisplay();
-    promoStatus.textContent=promoInput.value.trim()
-      ? "Tekan GUNAKAN atau Enter untuk memeriksa kode promo."
-      : "Kode promo akan diterapkan setelah ditekan GUNAKAN.";
-    promoStatus.className="promo-code-status";
-  });
-
-  promoInput.addEventListener("keydown",(event)=>{
-    if(event.key==="Enter"){
-      event.preventDefault();
-      if(!promoApply.disabled) applyPromo();
-      promoInput.blur();
-    }
-  });
-
-  promoApply.addEventListener("click",()=>{
-    if(!promoApply.disabled) applyPromo();
   });
 
   confirmBtn.addEventListener("click",()=>{
@@ -3415,21 +3226,18 @@ function bindConfirmationPage(){
 
     if(standardPurchaseProducts.has(pendingOrder.product)){
       const hariTanggalWA = dateEl.textContent.trim();
-      const hargaWA = formatRupiah(pendingOrder.finalUnitPrice || pendingOrder.unitPrice);
+      const hargaWA = formatRupiah(pendingOrder.unitPrice);
       const kapasitasWA = `${pendingOrder.qty} pcs`;
-
       const message = `oy min gw mau beli sesuatu nih.\n\n-FORMAT PEMBELIAN BY ZHARR-\nPRODUK:${pendingOrder.product}\nHARI DAN TGL:${hariTanggalWA}\nHARGA:${hargaWA}\nKAPASITAS:${kapasitasWA}`;
-
       window.open("https://wa.me/6283161797156?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
       return;
     }
 
     /* Fallback untuk produk lain yang bukan format pembelian 01-05/07. */
-    const message=`Halo Azhar, saya sudah membaca dan menyetujui peraturan ${pendingOrder.product}. Saya ingin membeli ${pendingOrder.product} sebanyak ${pendingOrder.qty} pcs. Harga per item: ${formatRupiah(pendingOrder.finalUnitPrice)}. Total: ${formatRupiah(pendingOrder.total)}.`;
+    const message=`Halo Azhar, saya sudah membaca dan menyetujui peraturan ${pendingOrder.product}. Saya ingin membeli ${pendingOrder.product} sebanyak ${pendingOrder.qty} pcs. Harga per item: ${formatRupiah(pendingOrder.unitPrice)}. Total: ${formatRupiah(pendingOrder.total)}.`;
     window.open("https://wa.me/6283161797156?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
   });
 }
-
 
 function bindInnerButtons(){
   bindConfirmationPage();
@@ -5182,10 +4990,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar, body *::-webkit-scrollbar {
 .qris-image-box img{width:100% !important;height:100% !important;object-fit:contain !important;display:block !important;}
 </style>
 <style id="paket03-confirm-cleanup">
-/* Paket 03: hide promo + item rules without breaking the existing confirmation logic */
-.promo-code-box,
-.confirm-rules,
-.confirm-discount-row{display:none !important;}
+/* Paket 03: keep its existing item-rules visibility behavior. */
+.confirm-rules{display:none !important;}
 </style>
 
 <style id="joki-mastery-sea-final">
